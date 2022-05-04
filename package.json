@@ -1,5 +1,5 @@
 {
-  "name": "react-and-express-startproject",
+  "name": "pgr6301-exam-mojibhashemi123",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -21,15 +21,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mojibhashemi123/react-and-express-startproject.git"
+    "url": "git+https://github.com/kristiania-pg6301-2022/pgr6301-exam-mojibhashemi123.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mojibhashemi123/react-and-express-startproject/issues"
+    "url": "https://github.com/kristiania-pg6301-2022/pgr6301-exam-mojibhashemi123/issues"
   },
-  "homepage": "https://github.com/mojibhashemi123/react-and-express-startproject#readme",
+  "homepage": "https://github.com/kristiania-pg6301-2022/pgr6301-exam-mojibhashemi123#readme",
   "devDependencies": {
     "concurrently": "^7.1.0",
     "husky": "^7.0.4",
