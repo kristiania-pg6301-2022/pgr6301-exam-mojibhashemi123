@@ -57,7 +57,7 @@ async function fetchUser(access_token, config) {
   }
 }
 
-export function LoginApi() {
+export function LoginApi(mongoDatabase) {
   const router = new Router();
 
   router.get("/", async (req, res) => {
@@ -68,8 +68,28 @@ export function LoginApi() {
 
     const response = { config, user: {} };
 
-    const { google_access_token, microsoft_access_token } = req.signedCookies;
-    console.log({ google_access_token, microsoft_access_token });
+    const { google_access_token, microsoft_access_token, email_access_token } =
+      req.signedCookies;
+    console.log({
+      google_access_token,
+      microsoft_access_token,
+      email_access_token,
+    });
+
+    if (email_access_token) {
+      const query = { email: email_access_token };
+
+      const users = await mongoDatabase
+        .collection("users")
+        .find(query)
+        .map(({ name, username, email }) => ({
+          name,
+          username,
+          email,
+        }))
+        .toArray();
+      response.user.email = users;
+    }
 
     if (google_access_token) {
       response.user.google = await fetchUser(
@@ -91,6 +111,7 @@ export function LoginApi() {
   router.delete("/", (req, res) => {
     res.clearCookie("google_access_token");
     res.clearCookie("microsoft_access_token");
+    res.clearCookie("email_access_token");
     res.sendStatus(200);
   });
 

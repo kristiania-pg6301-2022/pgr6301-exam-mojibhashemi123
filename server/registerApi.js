@@ -30,7 +30,7 @@ export function RegisterApi(mongoDatabase) {
     );
 
     if (user) {
-      res.cookie("email", user.username, { signed: true });
+      res.cookie("email_access_token", user.email, { signed: true });
       res.sendStatus(200);
     } else {
       res.sendStatus(401);

@@ -133,14 +133,14 @@ function LoginButton({ config, label, provider }) {
   );
 }
 
-export function StartLogin({ config }) {
+export function StartLogin({ config, reload }) {
   return (
     <div>
       <h1>Choice login</h1>
       <Link to={"/account/new"}>
         <h1>Sign up</h1>
       </Link>
-      <LoginWithLocalUser />
+      <LoginWithLocalUser reload={reload} />
       <LoginButton
         label={"Login with Google"}
         config={config}
@@ -158,7 +158,10 @@ export function StartLogin({ config }) {
 export function LoginPage({ config, reload }) {
   return (
     <Routes>
-      <Route path={"/"} element={<StartLogin config={config} />} />
+      <Route
+        path={"/"}
+        element={<StartLogin config={config} reload={reload} />}
+      />
       <Route
         path={"/:provider/callback"}
         element={<LoginCallback config={config} reload={reload} />}

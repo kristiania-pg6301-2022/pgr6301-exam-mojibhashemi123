@@ -3,7 +3,7 @@ import { fetchJSON } from "../lib/fetchJSON";
 import { postJSON } from "../lib/postJSON";
 
 export const UserContext = React.createContext({
-  async fetchLocalAccount() {
+  async fetchLocalUser() {
     return await fetchJSON("/api/register");
   },
 

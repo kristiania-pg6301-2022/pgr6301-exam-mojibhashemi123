@@ -22,9 +22,12 @@ mongoClient.connect().then(async () => {
     "/api/register",
     RegisterApi(mongoClient.db(process.env.MONGODB_DATABASE_USERS))
   );
-});
 
-app.use("/api/login", LoginApi());
+  app.use(
+    "/api/login",
+    LoginApi(mongoClient.db(process.env.MONGODB_DATABASE_USERS))
+  );
+});
 
 app.use("/api/greeting", greeting());
 

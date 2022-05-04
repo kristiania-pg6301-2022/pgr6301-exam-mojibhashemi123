@@ -5,7 +5,7 @@ import { FormInput } from "../lib/formInput";
 
 import "../css/loginWithLocalUser.css";
 
-export function LoginWithLocalUser() {
+export function LoginWithLocalUser({ reload }) {
   const { loginSession } = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,6 +19,7 @@ export function LoginWithLocalUser() {
 
     try {
       await result;
+      reload();
       navigate("/");
     } catch (error) {
       console.error("ERROR: ", error);

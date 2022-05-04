@@ -9,19 +9,34 @@ import "./css/application.css";
 import { Profile } from "./pages/profile";
 import { CreateAccount } from "./functions/createAccount";
 
-function UserActions({ user }) {
+export function UserActions({ user }) {
   if (!user || Object.keys(user).length === 0) {
     return <Link to={"/login"}>Login</Link>;
   }
 
-  return (
-    <>
-      <Link to={"/profile"}>
-        {user.google?.name ? `Profile for ${user.google.name}` : "Profile"}
-      </Link>
-      <Link to={"/login/endsession"}>Log out</Link>
-    </>
-  );
+  if (user.google?.name) {
+    return (
+      <>
+        <Link to={"/profile"}>{`Profile for ${user.google.name}`}</Link>
+        <Link to={"/login/endsession"}>Log out</Link>
+      </>
+    );
+  } else if (user.microsoft?.name) {
+    return (
+      <>
+        <Link to={"/profile"}>{"Profile for " + user.microsoft.name}</Link>
+        <Link to={"/login/endsession"}>Log out</Link>
+      </>
+    );
+  } else if (user.email) {
+    const name = user.email.map((u) => u.name);
+    return (
+      <>
+        <Link to={"/profile"}>{"Profile for " + name}</Link>
+        <Link to={"/login/endsession"}>Log out</Link>
+      </>
+    );
+  }
 }
 
 function ListArticle() {
@@ -34,6 +49,7 @@ function AddNewArticle() {
 
 export function Application() {
   const { fetchLogin } = useContext(APIsContext);
+
   const { data, error, loading, reload } = useLoading(fetchLogin);
 
   if (error) {
@@ -57,7 +73,11 @@ export function Application() {
           <Route path={"/"} element={<FrontPage />} />
           <Route path={"/article"} element={<ListArticle />} />
           <Route path={"/article/new"} element={<AddNewArticle />} />
-          <Route path={"/account/new"} element={<CreateAccount />} />
+
+          <Route
+            path={"/account/new"}
+            element={<CreateAccount reload={reload} />}
+          />
           <Route
             path={"/login/*"}
             element={<LoginPage config={data.config} reload={reload} />}
