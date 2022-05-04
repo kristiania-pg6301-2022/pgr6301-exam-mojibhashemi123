@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import { greeting } from "./greeting.js";
-import { LoginApi } from "./loginApi.js";
+import { LoginApi } from "./LoginApi.js";
 
 dotenv.config();
 
