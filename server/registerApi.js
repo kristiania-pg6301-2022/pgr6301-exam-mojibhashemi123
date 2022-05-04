@@ -12,5 +12,30 @@ export function RegisterApi(mongoDatabase) {
     res.sendStatus(200);
   });
 
+  router.post("/login", async (req, res) => {
+    const { email, password } = req.body;
+
+    const users = await mongoDatabase
+      .collection("users")
+      .find()
+      .map(({ email, password }) => ({
+        email,
+        password,
+      }))
+      .limit(100)
+      .toArray();
+
+    const user = users.find(
+      (u) => u.email === email && u.password === password
+    );
+
+    if (user) {
+      res.cookie("email", user.username, { signed: true });
+      res.sendStatus(200);
+    } else {
+      res.sendStatus(401);
+    }
+  });
+
   return router;
 }

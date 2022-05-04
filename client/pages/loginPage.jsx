@@ -3,6 +3,7 @@ import { Link, Route, Routes, useNavigate, useParams } from "react-router-dom";
 import { APIsContext } from "../apisContext";
 import { randomString } from "../lib/randomString";
 import { sha256 } from "../lib/sha256";
+import { LoginWithLocalUser } from "./loginWithLocalUser";
 
 export function LoginCallback({ reload, config }) {
   const { provider } = useParams();
@@ -139,9 +140,7 @@ export function StartLogin({ config }) {
       <Link to={"/account/new"}>
         <h1>Sign up</h1>
       </Link>
-      <Link to={"/account"}>
-        <h1>Sign in</h1>
-      </Link>
+      <LoginWithLocalUser />
       <LoginButton
         label={"Login with Google"}
         config={config}

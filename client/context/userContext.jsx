@@ -11,6 +11,10 @@ export const UserContext = React.createContext({
     return await postJSON("/api/register", account);
   },
 
+  async loginSession(token) {
+    return await postJSON("/api/register/login", token);
+  },
+
   async endLocalSession() {
     const res = await fetch("/api/register", { method: "DELETE" });
     if (!res.ok) {
