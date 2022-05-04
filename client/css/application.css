@@ -1,0 +1,33 @@
+#app{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr;
+}
+
+main{
+    background-color: lightgray;
+    overflow-y: auto;
+    padding: 1em;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    background-color: grey;
+    padding: 1em 1em;
+    border: black;
+    border-bottom:2px solid black;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+header > * {
+    padding-inline: 0.5em;
+}
+
+header .menu-divider{
+    flex: 1;
+}

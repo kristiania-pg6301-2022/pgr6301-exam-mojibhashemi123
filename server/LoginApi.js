@@ -90,6 +90,7 @@ export function LoginApi() {
 
   router.delete("/", (req, res) => {
     res.clearCookie("google_access_token");
+    res.clearCookie("microsoft_access_token");
     res.sendStatus(200);
   });
 
