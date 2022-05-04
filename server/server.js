@@ -2,15 +2,27 @@ import express from "express";
 import * as path from "path";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
+import { MongoClient } from "mongodb";
 import cookieParser from "cookie-parser";
 import { greeting } from "./greeting.js";
 import { LoginApi } from "./LoginApi.js";
+import { RegisterApi } from "./registerApi.js";
 
 dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
 app.use(cookieParser(process.env.COOKIE_SECRET));
+
+const mongoClient = new MongoClient(process.env.MONGODB_URL);
+
+mongoClient.connect().then(async () => {
+  console.log("Connected to mongodb");
+  app.use(
+    "/api/register",
+    RegisterApi(mongoClient.db(process.env.MONGODB_DATABASE_USERS))
+  );
+});
 
 app.use("/api/login", LoginApi());
 
