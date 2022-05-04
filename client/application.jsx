@@ -7,6 +7,7 @@ import { useLoading } from "./useLoading";
 
 import "./css/application.css";
 import { Profile } from "./pages/profile";
+import { CreateAccount } from "./functions/createAccount";
 
 function UserActions({ user }) {
   if (!user || Object.keys(user).length === 0) {
@@ -56,6 +57,7 @@ export function Application() {
           <Route path={"/"} element={<FrontPage />} />
           <Route path={"/article"} element={<ListArticle />} />
           <Route path={"/article/new"} element={<AddNewArticle />} />
+          <Route path={"/account/new"} element={<CreateAccount />} />
           <Route
             path={"/login/*"}
             element={<LoginPage config={data.config} reload={reload} />}

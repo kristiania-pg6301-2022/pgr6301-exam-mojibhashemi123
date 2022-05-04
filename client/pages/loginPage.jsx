@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Route, Routes, useNavigate, useParams } from "react-router-dom";
+import { Link, Route, Routes, useNavigate, useParams } from "react-router-dom";
 import { APIsContext } from "../apisContext";
 import { randomString } from "../lib/randomString";
 import { sha256 } from "../lib/sha256";
@@ -132,10 +132,16 @@ function LoginButton({ config, label, provider }) {
   );
 }
 
-function StartLogin({ config }) {
+export function StartLogin({ config }) {
   return (
     <div>
       <h1>Choice login</h1>
+      <Link to={"/account/new"}>
+        <h1>Sign up</h1>
+      </Link>
+      <Link to={"/account"}>
+        <h1>Sign in</h1>
+      </Link>
       <LoginButton
         label={"Login with Google"}
         config={config}
