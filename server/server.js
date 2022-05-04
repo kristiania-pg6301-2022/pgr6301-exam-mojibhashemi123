@@ -1,8 +1,18 @@
 import express from "express";
 import * as path from "path";
-import { greeting } from "./greeting";
+import dotenv from "dotenv";
+import bodyParser from "body-parser";
+import cookieParser from "cookie-parser";
+import { greeting } from "./greeting.js";
+import { LoginApi } from "./loginApi.js";
+
+dotenv.config();
 
 const app = express();
+app.use(bodyParser.json());
+app.use(cookieParser(process.env.COOKIE_SECRET));
+
+app.use("/api/login", LoginApi());
 
 app.use("/api/greeting", greeting());
 

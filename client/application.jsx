@@ -1,5 +1,4 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import React, { useContext } from "react";
 import { FrontPage } from "./pages/frontPage";
 
 function ListArticle() {
