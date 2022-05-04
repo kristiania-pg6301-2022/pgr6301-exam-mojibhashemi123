@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FrontPage shows FrontPage 1`] = `"<div><h1>news article</h1><ul><li><a href=\\"/article\\">Show news article</a></li><li><a href=\\"/article/new\\">Add new article</a></li></ul></div>"`;
