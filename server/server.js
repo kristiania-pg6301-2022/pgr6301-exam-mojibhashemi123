@@ -3,7 +3,6 @@ import * as path from "path";
 
 const app = express();
 
-
 app.use(express.static("../client/dist/"));
 
 app.use((req, res, next) => {
