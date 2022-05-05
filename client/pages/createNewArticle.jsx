@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { FormInput } from "../lib/formInput";
 import { articleContext } from "../context/articleContext";
 
-export function CreateNewArticle({ user }) {
+export function CreateNewArticle({ user, reload }) {
   const { createArticle } = useContext(articleContext);
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
@@ -30,6 +30,7 @@ export function CreateNewArticle({ user }) {
         return;
       }
       await result;
+      reload();
       navigate("/");
     } catch (error) {
       console.error("ERROR: ", error);

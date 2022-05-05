@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 export function FrontPage() {
   return (
-    <div>
+    <div id="frontpage">
       <h1>news article</h1>
       <ul>
         <li>
-          <Link to={"/article"}>Show news article</Link>
+          <Link to={"/"}>Show news article</Link>
         </li>
         <li>
           <Link to={"/article/new"}>Add new article</Link>

@@ -20,6 +20,9 @@ export function UserActions({ user }) {
   if (user.google?.name) {
     return (
       <>
+        <Link to={"/frontPage"}>Front Page</Link>
+        <Link to={"/"}>List article</Link>
+        <div className="menu-divider2" />
         <Link to={"/profile"}>{`Profile for ${user.google.name}`}</Link>
         <Link to={"/login/endsession"}>Log out</Link>
       </>
@@ -27,6 +30,9 @@ export function UserActions({ user }) {
   } else if (user.microsoft?.name) {
     return (
       <>
+        <Link to={"/frontPage"}>Front Page</Link>
+        <Link to={"/"}>List article</Link>
+        <div className="menu-divider2" />
         <Link to={"/profile"}>{"Profile for " + user.microsoft.name}</Link>
         <Link to={"/login/endsession"}>Log out</Link>
       </>
@@ -35,6 +41,9 @@ export function UserActions({ user }) {
     const name = user.email.map((u) => u.name);
     return (
       <>
+        <Link to={"/frontPage"}>Front Page</Link>
+        <Link to={"/"}>List article</Link>
+        <div className="menu-divider2" />
         <Link to={"/profile"}>{"Profile for " + name}</Link>
         <Link to={"/login/endsession"}>Log out</Link>
       </>
@@ -57,23 +66,20 @@ export function Application() {
   return (
     <BrowserRouter>
       <header>
-        <Link to={"/"}>Front Page</Link>
-        <Link to={"/article"}>List article</Link>
-        <div className="menu-divider" />
         <UserActions user={data?.user} />
       </header>
 
       <main>
         <Routes>
-          <Route path={"/"} element={<FrontPage />} />
-          <Route path={"/article"} element={<ListArticle />} />
+          <Route path={"/"} element={<ListArticle />} />
+          <Route path={"/frontPage"} element={<FrontPage />} />
           <Route
             path={"/article/new"}
-            element={<CreateNewArticle user={data?.user} />}
+            element={<CreateNewArticle user={data?.user} reload={reload} />}
           />
           <Route
             path={"/article/update"}
-            element={<UpdateArticle user={data?.user} />}
+            element={<UpdateArticle user={data?.user} reload={reload} />}
           />
           <Route path={"/ShowMatch"} element={<ShowMatch />} />
 
