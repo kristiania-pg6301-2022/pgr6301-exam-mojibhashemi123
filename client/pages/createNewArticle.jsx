@@ -9,18 +9,30 @@ export function CreateNewArticle() {
   const [author, setAuthor] = useState("");
   const [topic, setTopic] = useState("");
   const [text, setText] = useState("");
+  const [error, setError] = useState();
 
   const navigate = useNavigate();
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    createArticle({
+    const result = createArticle({
       title,
       author,
       topic,
       text,
     });
-    navigate("/");
+
+    try {
+      if (title === "" || author === "" || topic === "" || text === "") {
+        setError("Du må fylle");
+        return;
+      }
+      await result;
+      navigate("/");
+    } catch (error) {
+      console.error("ERROR: ", error);
+      setError("Du er ikke pålogget");
+    }
   }
 
   return (
@@ -32,6 +44,7 @@ export function CreateNewArticle() {
         <FormInput label={"Author:"} value={author} onChangeValue={setAuthor} />
         <strong>Text area:</strong>
         <textarea value={text} onChange={(e) => setText(e.target.value)} />
+        {error && <div>{error}</div>}
         <div>
           <button>Submit</button>
         </div>

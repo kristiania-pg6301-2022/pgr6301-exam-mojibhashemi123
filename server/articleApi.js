@@ -22,15 +22,21 @@ export function ArticleApi(mongoDatabase) {
   router.post("/", (req, res) => {
     const { title, author, topic, text } = req.body;
 
-    mongoDatabase
-      .collection("article")
-      .insertOne({ title, author, topic, text, date: new Date() });
-    res.sendStatus(200);
+    const { google_access_token, microsoft_access_token } = req.signedCookies;
+
+    if (google_access_token || microsoft_access_token) {
+      mongoDatabase
+        .collection("article")
+        .insertOne({ title, author, topic, text, date: new Date() });
+      res.sendStatus(200);
+    } else {
+      return res.status(401).send("Unauthorized");
+    }
   });
 
   router.put("/", (req, res) => {
     const { title, author, topic, text } = req.body;
-    const { microsoft_access_token } = signedCookie;
+    const { microsoft_access_token } = req.signedCookie;
 
     const query = {
       title: title,
