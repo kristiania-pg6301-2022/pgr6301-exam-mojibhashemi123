@@ -3,12 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { FormInput } from "../lib/formInput";
 import { articleContext } from "../context/articleContext";
 
-export function CreateNewArticle() {
+export function CreateNewArticle({ user }) {
   const { createArticle } = useContext(articleContext);
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [topic, setTopic] = useState("");
   const [text, setText] = useState("");
+  const [username, setUsername] = useState(user.microsoft?.name);
   const [error, setError] = useState();
 
   const navigate = useNavigate();
@@ -20,6 +21,7 @@ export function CreateNewArticle() {
       author,
       topic,
       text,
+      username,
     });
 
     try {

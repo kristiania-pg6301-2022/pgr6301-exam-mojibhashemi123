@@ -67,8 +67,14 @@ export function Application() {
         <Routes>
           <Route path={"/"} element={<FrontPage />} />
           <Route path={"/article"} element={<ListArticle />} />
-          <Route path={"/article/new"} element={<CreateNewArticle />} />
-          <Route path={"/article/update"} element={<UpdateArticle />} />
+          <Route
+            path={"/article/new"}
+            element={<CreateNewArticle user={data?.user} />}
+          />
+          <Route
+            path={"/article/update"}
+            element={<UpdateArticle user={data?.user} />}
+          />
           <Route path={"/ShowMatch"} element={<ShowMatch />} />
 
           <Route
