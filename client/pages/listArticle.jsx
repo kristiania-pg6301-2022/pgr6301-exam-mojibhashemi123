@@ -1,5 +1,3 @@
-import "../css/listArticle.css";
-
 export function ListArticle() {
   return <div>{<Show />}</div>;
 }
