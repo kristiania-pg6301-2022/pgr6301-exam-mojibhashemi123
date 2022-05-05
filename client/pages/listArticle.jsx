@@ -76,13 +76,17 @@ export function ShowMatch() {
   );
 }
 
-function ArticleCard({ articles: { title, author, topic, text } }) {
+function ArticleCard({ articles: { title, author, topic, text, date } }) {
   return (
     <>
       <h3>Title: {title}</h3>
       <h4>Author: {author}</h4>
       <div>Topic: {topic}</div>
       <p>Text: {text}</p>
+      <h6>Date: {date}</h6>
+      <p>
+        -------------------------------------------------------------------------------------------------------------------------------------------------------------
+      </p>
     </>
   );
 }

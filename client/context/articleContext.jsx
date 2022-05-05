@@ -10,4 +10,17 @@ export const articleContext = React.createContext({
   async createArticle(article) {
     return await postJSON("/api/article", article);
   },
+
+  async updateArticle(update) {
+    const res = await fetch("/api/article", {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(update),
+    });
+    if (!res.ok) {
+      throw new Error(`Failed to post ${res.status}: ${res.statusText}`);
+    }
+  },
 });
