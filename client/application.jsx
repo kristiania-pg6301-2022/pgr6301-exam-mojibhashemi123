@@ -8,8 +8,8 @@ import { useLoading } from "./useLoading";
 import "./css/application.css";
 import { Profile } from "./pages/profile";
 import { CreateAccount } from "./pages/createAccount";
-import { ListArticle } from "../client/pages/listArticle";
-import { AddNewArticle } from "../client/pages/addNewArticle";
+import { ListArticle } from "./pages/listArticle";
+import { AddNewArticle } from "./pages/addNewArticle";
 
 export function UserActions({ user }) {
   if (!user || Object.keys(user).length === 0) {
