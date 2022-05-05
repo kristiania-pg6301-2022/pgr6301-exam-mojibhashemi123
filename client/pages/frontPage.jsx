@@ -12,6 +12,9 @@ export function FrontPage() {
         <li>
           <Link to={"/article/new"}>Add new article</Link>
         </li>
+        <li>
+          <Link to={"/article/update"}>Update your Article</Link>
+        </li>
       </ul>
     </div>
   );

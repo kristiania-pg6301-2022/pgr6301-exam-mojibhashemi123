@@ -39,6 +39,8 @@ export function ArticleApi(mongoDatabase) {
     mongoDatabase
       .collection("article")
       .update(query, { $set: { author, topic, text, date: new Date() } });
+
+    res.sendStatus(200);
   });
 
   return router;
