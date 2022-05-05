@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+#container2 {
+   margin: 10px;
+    padding: 16px;
+
+}
+
 #sidebar {
     position: fixed;
     width: 30%;
@@ -43,6 +49,10 @@
 }
 
 #sidebar.active{
+    left: 0;
+}
+
+#sidebar.dd{
     left: 0;
 }
 

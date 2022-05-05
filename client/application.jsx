@@ -8,7 +8,7 @@ import { useLoading } from "./useLoading";
 import "./css/application.css";
 import { Profile } from "./pages/profile";
 import { CreateAccount } from "./pages/createAccount";
-import { ListArticle } from "./pages/listArticle";
+import { ListArticle, ShowMatch } from "./pages/listArticle";
 import { CreateNewArticle } from "./pages/createNewArticle";
 
 export function UserActions({ user }) {
@@ -67,6 +67,7 @@ export function Application() {
           <Route path={"/"} element={<FrontPage />} />
           <Route path={"/article"} element={<ListArticle />} />
           <Route path={"/article/new"} element={<CreateNewArticle />} />
+          <Route path={"/ShowMatch"} element={<ShowMatch />} />
 
           <Route
             path={"/account/new"}

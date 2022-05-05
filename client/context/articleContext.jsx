@@ -3,7 +3,7 @@ import { fetchJSON } from "../lib/fetchJSON";
 import { postJSON } from "../lib/postJSON";
 
 export const articleContext = React.createContext({
-  async listArticle() {
+  async fetchArticle() {
     return await fetchJSON("/api/article");
   },
 
