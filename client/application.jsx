@@ -9,7 +9,7 @@ import "./css/application.css";
 import { Profile } from "./pages/profile";
 import { CreateAccount } from "./pages/createAccount";
 import { ListArticle } from "./pages/listArticle";
-import { AddNewArticle } from "./pages/addNewArticle";
+import { CreateNewArticle } from "./pages/createNewArticle";
 
 export function UserActions({ user }) {
   if (!user || Object.keys(user).length === 0) {
@@ -66,7 +66,7 @@ export function Application() {
         <Routes>
           <Route path={"/"} element={<FrontPage />} />
           <Route path={"/article"} element={<ListArticle />} />
-          <Route path={"/article/new"} element={<AddNewArticle />} />
+          <Route path={"/article/new"} element={<CreateNewArticle />} />
 
           <Route
             path={"/account/new"}
