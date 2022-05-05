@@ -7,6 +7,7 @@ import cookieParser from "cookie-parser";
 import { greeting } from "./greeting.js";
 import { LoginApi } from "./LoginApi.js";
 import { RegisterApi } from "./registerApi.js";
+import { ArticleApi } from "./articleApi.js";
 
 dotenv.config();
 
@@ -26,6 +27,11 @@ mongoClient.connect().then(async () => {
   app.use(
     "/api/login",
     LoginApi(mongoClient.db(process.env.MONGODB_DATABASE_USERS))
+  );
+
+  app.use(
+    "/api/article",
+    ArticleApi(mongoClient.db(process.env.MONGODB_DATABASE_ARTICLE))
   );
 });
 

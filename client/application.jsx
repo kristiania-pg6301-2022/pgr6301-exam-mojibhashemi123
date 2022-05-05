@@ -7,8 +7,9 @@ import { useLoading } from "./useLoading";
 
 import "./css/application.css";
 import { Profile } from "./pages/profile";
-import { CreateAccount } from "./functions/createAccount";
+import { CreateAccount } from "./pages/createAccount";
 import { ListArticle } from "./pages/listArticle";
+import { AddNewArticle } from "./pages/addNewArticle";
 
 export function UserActions({ user }) {
   if (!user || Object.keys(user).length === 0) {
@@ -38,10 +39,6 @@ export function UserActions({ user }) {
       </>
     );
   }
-}
-
-function AddNewArticle() {
-  return null;
 }
 
 export function Application() {

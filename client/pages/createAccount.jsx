@@ -20,7 +20,7 @@ export function CreateAccount() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Add new movie</h1>
+      <h1>Add new account</h1>
 
       <FormInput label={"First Name:"} value={name} onChangeValue={setName} />
       <FormInput
