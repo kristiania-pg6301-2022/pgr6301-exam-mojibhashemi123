@@ -31,22 +31,32 @@ Dette er versjonene vi brukte under forelesningene om som er validert som ok:
 
 ## Egenutfylling av tekniske krav
 
-* [ ] Oppsett av package.json, parcel, express, prettier
+* [x] Oppsett av package.json, parcel, express, prettier
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] React Router
+* [x] React Router
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] Express app
+* [x] Express app
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] Kommunikasjon mellom frontend (React) og backend (Express)
+* [x] Kommunikasjon mellom frontend (React) og backend (Express)
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] Deployment til Heroku
+  * 
+----------fikk store problemer med heroku. skjønte aldri hva probleme var. Tror fordi jeg hadde endret filnavn og committen satt fast og ville ikke fortsette.
+----------Ettersom jeg ble ferdig med appen så tørte jeg ikke mer å pushe til Heroku. appen fungerer fint så testene pushet jeg bare til github
+  * 
+* [x] Deployment til Heroku
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] Bruk av MongoDB
+* [x] Bruk av MongoDB
+* 
+----------Det var veldig gøy å bruke MongoDB. kommer til å bruke den framover
+* 
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] OpenID Connect
+* [x] OpenID Connect
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [ ] Web Sockets
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] Jest med dokumentert testdekning
+* [x] Jest med dokumentert testdekning
+* 
+----------fikk veldig bra testdekning på server siden,  84.52 på server siden og 57.01 på client siden
+
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
  
