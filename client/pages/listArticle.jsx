@@ -80,7 +80,9 @@ export function ShowMatch() {
   );
 }
 
-function ArticleCard({ articles: { title, author, topic, text, date } }) {
+export function ArticleCard({
+  articles: { title, author, topic, text, date },
+}) {
   return (
     <>
       <h3>Title: {title}</h3>

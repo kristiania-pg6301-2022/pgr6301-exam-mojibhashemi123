@@ -1,3 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ListArticle component shows article 1`] = `"<h3>Title: </h3><h4>Author: </h4><div>Topic: </div><p>Text: </p><h6>Date: </h6><p>-------------------------------------------------------------------------------------------------------------------------------------------------------------</p>"`;
+
+exports[`ListArticle component shows article 2`] = `"<h3>Title: </h3><h4>Author: </h4><div>Topic: </div><p>Text: </p><h6>Date: </h6><p>-------------------------------------------------------------------------------------------------------------------------------------------------------------</p>"`;
+
+exports[`ListArticle component shows article 3`] = `"<h3>Title: </h3><h4>Author: </h4><div>Topic: </div><p>Text: </p><h6>Date: </h6><p>-------------------------------------------------------------------------------------------------------------------------------------------------------------</p>"`;
+
+exports[`ListArticle component shows article 4`] = `"<h3>Title: </h3><h4>Author: </h4><div>Topic: </div><p>Text: </p><h6>Date: </h6><p>-------------------------------------------------------------------------------------------------------------------------------------------------------------</p>"`;
+
+exports[`ListArticle component shows error message 1`] = `"<div><h1>Error</h1><div id=\\"error-text\\">Error: Something went wrong</div></div>"`;
+
 exports[`ListArticle component shows loading screen 1`] = `"<div>Loading...</div>"`;
