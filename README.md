@@ -52,7 +52,8 @@ Dette er versjonene vi brukte under forelesningene om som er validert som ok:
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [x] Bruk av MongoDB
 * 
-----------Det var veldig gøy å bruke MongoDB. kommer til å bruke den framover
+----------Det var veldig gøy å bruke MongoDB. kommer til å bruke den framover. Redaksjonelle brukere(AD) kan oppdatere ettersom de har lagt til article.
+          vanlig brukere kan ikke legge til article, men google brukere kan legge til men kan ikke endre
 * 
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [x] OpenID Connect
