@@ -72,6 +72,9 @@ export function ShowMatch() {
         //for feil meldinger i browser bruk index
         <ArticleCard key={index} articles={articles} />
       ))}
+      <Link to={"/"}>
+        <h1>GO BACK</h1>
+      </Link>
     </div>
   );
 }
