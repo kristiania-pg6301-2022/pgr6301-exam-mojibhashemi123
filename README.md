@@ -3,6 +3,11 @@
 [Heroku](https://pgr6301-exam22.herokuapp.com)
 [Test rapport]
 
+<img src="image/Api.png" width="500">
+<img src="image/Client.png" width="650">
+
+Heroku: https://pgr6301-exam22.herokuapp.com
+
 ## Tips
 
 * Bruk versjoner av alle dependencies som vi brukte på forelesningene. Det skjer hele tiden endringer i JavaScript-land og noen ganger vil siste versjon oppføre seg forskjellig - ikke kast bort verdifull eksamenstid. Du kan kopiere package.json fra innlevering eller en øving
