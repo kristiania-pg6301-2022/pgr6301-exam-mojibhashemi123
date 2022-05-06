@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import { MongoClient } from "mongodb";
 import cookieParser from "cookie-parser";
-import { greeting } from "./greeting.js";
 import { LoginApi } from "./LoginApi.js";
 import { RegisterApi } from "./registerApi.js";
 import { ArticleApi } from "./articleApi.js";
@@ -34,8 +33,6 @@ mongoClient.connect().then(async () => {
     ArticleApi(mongoClient.db(process.env.MONGODB_DATABASE_ARTICLE))
   );
 });
-
-app.use("/api/greeting", greeting());
 
 app.use(express.static("../client/dist/"));
 

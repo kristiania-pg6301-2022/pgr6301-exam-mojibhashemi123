@@ -3,7 +3,7 @@ import express from "express";
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
-import cookieParser, { signedCookie } from "cookie-parser";
+import cookieParser from "cookie-parser";
 import { LoginApi } from "../LoginApi.js";
 import { ArticleApi } from "../articleApi.js";
 
@@ -33,13 +33,13 @@ describe("article api", () => {
     });
   });
 
-  it("adds a new account with signedCookies", async () => {
-    const title = "Some title";
-    const author = "author";
-    const topic = "Car";
-    const text = "Text";
-    const username = { username: "username" };
+  const username = { username: "username" };
+  const title = "Some title";
+  const author = "author";
+  const topic = "Car";
+  const text = "Text";
 
+  it("adds a new article with signedCookies", async () => {
     await request.agent(app).post("/api/login/google").send({
       access_token: "s:ya29.A0ARrdaM9XGD_2aN1nBV",
     });
@@ -54,6 +54,12 @@ describe("article api", () => {
         )
         .expect(200)
     );
+
+    expect(
+      (await request(app).get("/api/article").expect(200)).body.map(
+        ({ title }) => title
+      )
+    ).toContain("Some title");
   });
 
   it("get token_endpoint and responds with json", async () => {
@@ -76,5 +82,20 @@ describe("article api", () => {
       config.config.microsoft.token_endpoint
     );
     expect(response.headers["content-type"]).toMatch(/json/);
+  });
+
+  it("get 401 Unauthorized", async () => {
+    expect(
+      await request(app)
+        .put("/api/article")
+        .send({
+          title,
+          author: "changeAuthor",
+          topic: "changeTopic",
+          text: "changeText",
+          username,
+        })
+        .expect(401)
+    );
   });
 });
