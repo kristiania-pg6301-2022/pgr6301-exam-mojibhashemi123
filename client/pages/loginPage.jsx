@@ -135,12 +135,8 @@ function LoginButton({ config, label, provider }) {
 
 export function StartLogin({ config, reload }) {
   return (
-    <div>
+    <div id="loginPage">
       <h1>Choice login</h1>
-      <Link to={"/account/new"}>
-        <h1>Sign up</h1>
-      </Link>
-      <LoginWithLocalUser reload={reload} />
       <LoginButton
         label={"Login with Google"}
         config={config}
@@ -151,6 +147,14 @@ export function StartLogin({ config, reload }) {
         config={config}
         provider={"microsoft"}
       />
+
+      <Link to={"/account/new"}>
+        <h1>Sign up</h1>
+      </Link>
+      <LoginWithLocalUser reload={reload} />
+      <Link to={"/account/new"}>
+        <h1>GO BACK</h1>
+      </Link>
     </div>
   );
 }
