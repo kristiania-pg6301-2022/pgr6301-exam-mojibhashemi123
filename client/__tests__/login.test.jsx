@@ -9,7 +9,6 @@ jest.mock("../css/loginWithLocalUser.css", () => jest.fn());
 
 describe("login page", () => {
   it("redirect to log in with google", async () => {
-    //replace window.location to be able to detect redirects
     const location = new URL("https://www.example.com");
     delete window.location;
     window.location = new URL(location);
@@ -42,5 +41,30 @@ describe("login page", () => {
       new URLSearchParams(window.location.search.substring(1))
     );
     expect(params).toMatchObject({ client_id, redirect_uri });
+  });
+
+  it("posts received token to server", async () => {
+    window.sessionStorage.setItem("expected_state", "test");
+    const access_token = `abc`;
+    const location = new URL(
+      `https://www.example.com#access_token=${access_token}&state=test`
+    );
+    delete window.location;
+    window.location = new URL(location);
+
+    const domElement = document.createElement("div");
+    const registerLogin = jest.fn();
+    const reload = jest.fn();
+    act(() => {
+      ReactDOM.render(
+        <MemoryRouter initialEntries={["/google/callback"]}>
+          <APIsContext.Provider value={{ registerLogin }}>
+            <LoginPage reload={reload} />
+          </APIsContext.Provider>
+        </MemoryRouter>,
+        domElement
+      );
+    });
+    expect(registerLogin).toBeCalledWith("google", { access_token });
   });
 });
