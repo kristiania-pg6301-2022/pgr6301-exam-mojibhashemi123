@@ -1,4 +1,4 @@
-# PG6301 eksamen <tittel på løsningen>
+# PG6301 eksamen <pg63012022>
 
 [Heroku](https://pgr6301-exam22.herokuapp.com)
 [Test rapport]
