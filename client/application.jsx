@@ -57,8 +57,14 @@ export function Application() {
   const { data, error, loading, reload } = useLoading(fetchLogin);
 
   if (error) {
-    return <div>Error: {error.toString()}</div>;
+    return (
+      <div>
+        <h1>Error</h1>
+        <div id="error-text">{error.toString()}</div>
+      </div>
+    );
   }
+
   if (loading) {
     return <div>Please wait...</div>;
   }

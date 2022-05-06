@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fetch users fetchlogin component shows error message 1`] = `"<div><h1>Error</h1><div id=\\"error-text\\">Error: Something went wrong</div></div>"`;
+
+exports[`fetch users fetchlogin component shows loading screen 1`] = `"<div>Please wait...</div>"`;
