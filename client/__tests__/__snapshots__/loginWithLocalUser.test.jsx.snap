@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`login component shows local login form 1`] = `"<div class=\\"loginDiv\\"><form><div class=\\"form-input\\"><label><strong>Email:</strong> <input value=\\"\\"></label></div><div class=\\"form-input\\"><label><strong>Password:</strong> <input value=\\"\\"></label></div><div><button>Log in</button></div></form></div>"`;
