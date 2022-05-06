@@ -152,7 +152,7 @@ export function StartLogin({ config, reload }) {
         <h1>Sign up</h1>
       </Link>
       <LoginWithLocalUser reload={reload} />
-      <Link to={"/account/new"}>
+      <Link to={"/"}>
         <h1>GO BACK</h1>
       </Link>
     </div>
