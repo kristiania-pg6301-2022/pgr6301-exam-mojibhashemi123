@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`profile show profile for google 1`] = `"<div class=\\"card\\"><h1>You are signed with google account</h1><main><div class=\\"row\\"><div class=\\"column\\"><div class=\\"card\\"><img src=\\"https://lh3.googleusercontent.com/a-/AOh14Ghh70gSuO_xtuhlK-4jZkflx-T6oHibukhQX7ul=s96-c\\" alt=\\"Profile picture\\"></div><h3>Name: NameTest</h3><h4>Email: test@test.com</h4></div></div></main></div>"`;
+
+exports[`profile show profile for microsoft 1`] = `"<div class=\\"card\\"><h1>You are signed with school account</h1><main><div class=\\"row\\"><div class=\\"column\\"><div class=\\"card\\"><img src=\\"https://lh3.googleusercontent.com/a-/AOh14Ghh70gSuO_xtuhlK-4jZkflx-T6oHibukhQX7ul=s96-c\\" alt=\\"Profile picture\\"></div><h3>Name: testName2</h3><h4>Email: test@hotmail.com</h4></div></div></main></div>"`;

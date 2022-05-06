@@ -1,0 +1,51 @@
+#app{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr;
+}
+
+.menu-divider2{
+    flex: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    background-color: grey;
+    padding: 1em 1em;
+    border: black;
+    border-bottom:2px solid black;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+header > * {
+    padding-inline: 0.5em;
+}
+
+header .menu-divider{
+    flex: 1;
+}
+
+#frontpage{
+    padding: 10px;
+    margin: 10px;
+}
+
+#loginPage{
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -150px;
+}
+
+#loginPage h1 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
